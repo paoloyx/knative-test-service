@@ -1,0 +1,3 @@
+image:
+  repository: gcr.io/knative-samples/helloworld-go
+  tag: latest
