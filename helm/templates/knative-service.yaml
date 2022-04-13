@@ -9,6 +9,10 @@ spec:
         - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: 8080
+            {{- with .Values.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           env:
             - name: TARGET
               value: "World"
